@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>𝕡-Perk</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Title animation function for the "Perk" part
+        const prefix = '𝕡-'; 
+        const originalPart = 'Perk'; 
+        const newPart = 'Perk'; 
+        let index = originalPart.length;
+        let deleting = true;
+
+        function animateTitle() {
+            let animatedPart = deleting ? originalPart.substring(0, index) : newPart.substring(0, index);
+            document.title = prefix + animatedPart;
+
+            if (deleting) {
+                index--;
+                if (index < 0) {
+                    deleting = false; 
+                    index = 0; 
+                }
+            } else {
+                index++;
+                if (index > newPart.length) {
+                    deleting = true; 
+                    index = originalPart.length; 
+                }
+            }
+
+            setTimeout(animateTitle, 200); 
+        }
+
+        window.onload = () => {
+            animateTitle();
+        };
+    </script>
+</head>
+<body>
+    <div class="container">
+        <button class="enter-button">Click to Enter</button>
+    </div>
+    <div class="video-container">
+        <video id="video" autoplay loop>
+            <source src="Perkclientv1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="name-box">
+        <div>Perk Store</div>
+        <div class="subtitle">Hardest private bio links</div>
+    </div>
+    <button class="small-button"></button> <!-- First image button -->
+    <button class="small-button second-button"></button> <!-- Second image button -->
+
+    <script>
+        document.querySelector('.enter-button').addEventListener('click', function() {
+            // Hide the container with the button
+            document.querySelector('.container').style.display = 'none';
+
+            const videoContainer = document.querySelector('.video-container');
+            videoContainer.style.visibility = 'visible'; 
+            videoContainer.classList.add('fade-in'); 
+            videoContainer.style.opacity = '1'; 
+
+            const nameBox = document.querySelector('.name-box');
+            nameBox.style.opacity = '1'; 
+
+            const smallButton = document.querySelector('.small-button');
+            const secondButton = document.querySelector('.second-button');
+            smallButton.style.opacity = '1'; 
+            secondButton.style.opacity = '1'; 
+
+            const video = document.getElementById('video');
+            video.play(); 
+        });
+
+        document.querySelector('.small-button').addEventListener('click', function() {
+            window.open('https://discord.gg/perkdc', '_blank'); 
+        });
+
+        document.querySelector('.second-button').addEventListener('click', function() {
+            window.open('https://cash.app/$KadenCrus', '_blank'); 
+        });
+    </script>
+</body>
+</html>
