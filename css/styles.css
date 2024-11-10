@@ -18,7 +18,7 @@ body {
     z-index: 3;
 }
 
-/* Style for the button */
+/* Style for the "Click to Enter" button */
 .enter-button {
     background-color: transparent;
     border: 2px solid white;
@@ -46,7 +46,7 @@ body {
     z-index: 1;
 }
 
-/* Name box with opacity control */
+/* Name box styling */
 .name-box {
     text-align: center;
     opacity: 0;
@@ -58,7 +58,7 @@ body {
     transform: translateX(-50%);
 }
 
-/* Circular image styling */
+/* Circular image (logo) styling */
 .circular-image {
     width: 150px;
     height: 150px;
@@ -95,10 +95,4 @@ body {
 
 .second-button {
     background-image: url('button2-image.png');
-}
-
-/* Button visibility fade-in */
-.fade-in {
-    opacity: 1 !important;
-    transition: opacity 1s ease-in-out;
 }
