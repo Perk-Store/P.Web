@@ -1,10 +1,10 @@
-body, html { 
+body, html {
     height: 100%;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black; 
+    background-color: black;
     overflow: hidden;
 }
 
@@ -13,107 +13,104 @@ body, html {
 }
 
 .enter-button {
-    position: absolute; 
-    top: calc(50% - 50px); 
-    left: 50%;
-    transform: translate(-50%, -50%); 
     padding: 15px 30px;
     font-size: 20px;
     cursor: pointer;
-    border: 2px solid white; 
+    border: 2px solid white;
     border-radius: 5px;
-    background-color: black; 
-    color: white; 
-    transition: background-color 0.3s, color 0.3s; 
-    z-index: 2; 
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .enter-button:hover {
-    background-color: white; 
-    color: black; 
+    background-color: white;
+    color: black;
 }
 
 .video-container {
-    position: absolute; 
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0; 
-    visibility: hidden; 
-    transition: opacity 2s ease; 
-    z-index: -1; 
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 2s ease;
+    z-index: -1;
 }
 
 .fade-in {
-    opacity: 1; 
+    opacity: 1;
 }
 
 .name-box {
     position: absolute;
-    top: calc(50% + 40px); 
+    top: calc(50% + 40px);
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px 40px;
-    background-color: rgba(64, 64, 64, 0.8); 
-    color: white; 
-    font-size: 30px; 
+    background-color: rgba(64, 64, 64, 0.8);
+    color: white;
+    font-size: 30px;
     text-align: center;
-    opacity: 0; 
-    transition: opacity 2s ease; 
-    z-index: 1; 
-    border-radius: 10px; 
+    opacity: 0;
+    transition: opacity 2s ease;
+    z-index: 1;
+    border-radius: 10px;
 }
 
 .subtitle {
-    font-size: 16px; 
-    color: white; 
-    margin-top: 5px; 
+    font-size: 16px;
+    color: white;
+    margin-top: 5px;
 }
 
 .circular-image {
-    width: 100px; 
-    height: 100px; 
-    border-radius: 50%; 
-    overflow: hidden; 
-    opacity: 0; 
-    transition: opacity 2s ease; 
-    position: absolute; 
-    top: calc(50% - 60px); 
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes the image circular */
+    overflow: hidden; /* Ensures no overflow */
+    opacity: 0; /* Start invisible */
+    transition: opacity 2s ease; /* Fade transition */
+    margin: 10px auto; /* Center horizontally */
+    position: absolute; /* Allows positioning adjustments */
+    top: calc(50% - 70px); /* Moves the image above the box by 25% */
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%); /* Centers the image */
+    z-index: 2; /* Ensure it's above other elements */
 }
 
 .circular-image img {
-    width: 100%; 
-    height: auto; 
+    width: 100%; /* Fill the circular container */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .small-button,
 .second-button {
-    width: 40px; 
-    height: 40px; 
-    background-size: cover; 
-    background-repeat: no-repeat; 
-    border: none; 
-    cursor: pointer; 
-    position: absolute; 
-    top: calc(50% + 90px); 
-    opacity: 1; 
-    transition: opacity 2s ease; 
+    width: 20px;
+    height: 20px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: calc(50% + 90px);
+    opacity: 0;
+    transition: opacity 2s ease;
 }
 
 .small-button {
-    left: calc(50% - 105px); 
-    background-image: url('download.png'); 
+    left: calc(50% - 105px);
+    background-image: url('download.png');
 }
 
 .second-button {
-    left: calc(50% - 80px); 
-    background-image: url('Cashapp.png'); 
+    left: calc(50% - 80px);
+    background-image: url('Cashapp.png');
 }
 
 video {
-    width: 100%; 
-    height: auto; 
+    width: 100%;
+    height: auto;
 }
