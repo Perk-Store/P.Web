@@ -16,5 +16,5 @@ document.querySelector(".enter-button").addEventListener("click", function () {
     secondButton.style.opacity = "1";
 
     const video = document.getElementById("video");
-    video.play();
+    video.play(); // Play video when clicked
 });
