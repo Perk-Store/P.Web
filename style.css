@@ -98,7 +98,6 @@ body, html {
   border-radius: 10px;
   max-width: 80%;
   color: white;
-  font-size: 1.5em;
 }
 
 #titleText {
@@ -106,13 +105,21 @@ body, html {
   color: white;
   font-size: 1.8em;
   white-space: nowrap;
-  margin: 0; /* Remove margin to avoid extra space */
+  margin: 0;
 }
 
 #discordText {
   font-weight: normal;
   color: grey;
-  font-size: 0.8em; /* Smaller font size */
+  font-size: 0.8em;
   text-align: center;
-  margin: 0; /* Remove margin to avoid extra space */
+  margin: 0;
+}
+
+#bioText {
+  font-weight: normal;
+  color: grey;
+  font-size: 0.7em; /* Slightly smaller font size */
+  text-align: center;
+  margin: 0;
 }
