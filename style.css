@@ -106,6 +106,7 @@ body, html {
   color: white;
   font-size: 1.8em;
   white-space: nowrap;
+  margin: 0; /* Remove margin to avoid extra space */
 }
 
 #discordText {
@@ -113,5 +114,5 @@ body, html {
   color: grey;
   font-size: 0.8em; /* Smaller font size */
   text-align: center;
-  margin-top: 0; /* No space between title and discord text */
+  margin: 0; /* Remove margin to avoid extra space */
 }
