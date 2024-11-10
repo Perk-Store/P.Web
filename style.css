@@ -88,6 +88,7 @@ body, html {
   z-index: 3;
 }
 
+/* Ensure all text is centered */
 #textBox h1 {
   font-size: 2em;
   font-weight: bold;
@@ -98,7 +99,15 @@ body, html {
 #textBox p {
   font-size: 1.2em;
   color: grey;
-  margin: 10px 0;
+  margin: 5px 0;
+}
+
+#textBox .discord {
+  font-size: 1em;
+}
+
+#textBox .bio {
+  font-size: 0.9em;
 }
 
 #textBox img {
@@ -111,6 +120,9 @@ body, html {
 #textBox hr {
   border: 1px solid #ddd;
   margin: 20px 0;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Image buttons styling */
