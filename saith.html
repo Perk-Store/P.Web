@@ -30,63 +30,6 @@
         </video>
     </div>
 
-    <script>
-        const prefix = '𝕡-'; 
-        const originalPart = 'Perk'; 
-        const newPart = 'Saith'; 
-        let index = originalPart.length;
-        let deleting = true;
-
-        function animateTitle() {
-            let animatedPart = deleting ? originalPart.substring(0, index) : newPart.substring(0, index);
-            document.title = prefix + animatedPart;
-            if (deleting) {
-                index--;
-                if (index < 0) {
-                    deleting = false; 
-                    index = 0; 
-                }
-            } else {
-                index++;
-                if (index > newPart.length) {
-                    deleting = true; 
-                    index = originalPart.length; 
-                }
-            }
-            setTimeout(animateTitle, 200); 
-        }
-
-        window.onload = () => {
-            animateTitle();
-        };
-
-        function playSaithVideo() {
-            const videoContainer = document.querySelector('.saith-video-container');
-            videoContainer.style.visibility = 'visible'; 
-            videoContainer.style.opacity = '1'; 
-            const saithVideo = document.getElementById('saith-video');
-            saithVideo.currentTime = 0; // Reset to the beginning
-            saithVideo.play(); 
-        }
-
-        function fadeInElements() {
-            const circularImage = document.querySelector('.circular-image');
-            circularImage.style.opacity = '1'; 
-        }
-
-        document.querySelector('.enter-button').addEventListener('click', function() {
-            document.querySelector('.container').style.display = 'none';
-            // Show the circular image and video
-            playSaithVideo();
-            fadeInElements();
-            const videoContainer = document.querySelector('.video-container');
-            videoContainer.style.display = 'block'; // Show the video container
-            videoContainer.style.opacity = '1'; 
-            const nameBox = document.querySelector('.name-box');
-            nameBox.style.opacity = '1'; 
-            const video = document.getElementById('video');
-            video.play(); 
-        });
-    </script>
+    <script src="./js/enter.js"></script>
 </body>
 </html>
