@@ -4,9 +4,12 @@ document.querySelector(".enter-button").addEventListener("click", function () {
 
     // Show the video
     const videoContainer = document.querySelector(".video-container");
-    videoContainer.style.visibility = "visible";
-    videoContainer.style.opacity = "1";  // Make sure video is visible
-    videoContainer.classList.add("fade-in");
+    videoContainer.style.display = "block"; // Ensure it's visible
+    videoContainer.style.opacity = "1";  // Make sure the video is fully visible
+
+    // Play the video
+    const video = document.getElementById("video");
+    video.play();
 
     // Fade in the name box and buttons
     const nameBox = document.querySelector(".name-box");
@@ -16,8 +19,4 @@ document.querySelector(".enter-button").addEventListener("click", function () {
     const secondButton = document.querySelector(".second-button");
     smallButton.style.opacity = "1";
     secondButton.style.opacity = "1";
-
-    // Play the video
-    const video = document.getElementById("video");
-    video.play();
 });
