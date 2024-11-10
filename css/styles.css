@@ -23,8 +23,11 @@ body, html {
     background-color: black;
     color: white;
     transition: background-color 0.3s, color 0.3s;
-    position: relative;
-    z-index: 2; /* Keep button above image */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 }
 
 .enter-button:hover {
@@ -82,7 +85,7 @@ body, html {
     top: calc(50% - 70px);
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1; /* Set z-index lower than button */
+    z-index: 1;
 }
 
 .circular-image img {
