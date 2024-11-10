@@ -88,7 +88,7 @@ body, html {
   opacity: 0;
   transition: opacity 1s ease-in-out;
   position: absolute;
-  top: -30px; /* Move the image up by 30px */
+  top: -25px; /* Move the image up by 25px, making the bottom 25% overlap the text box */
   left: 50%;
   transform: translateX(-50%);
 }
