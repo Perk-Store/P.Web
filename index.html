@@ -1,44 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perk Store</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="enter.js" defer></script>
+    <!-- Include particles.js script -->
+    <script src="particles.js"></script>
 </head>
-
 <body>
-    <!-- Particles.js Background -->
+    <!-- Particles container -->
     <div id="snow"></div>
 
-    <!-- Main Container -->
+    <!-- Main Content -->
     <div class="container">
-        <!-- Logo and "Click to Enter" Button -->
+        <button class="enter-button">Click to Enter</button>
         <div class="logo-container">
-            <img src="perk_logo.png" alt="Perk Logo" class="circular-image">
-            <div class="name-box">
-                <div>Perk Store</div>
-                <div class="subtitle">Hardest private bio links</div>
-            </div>
-            <button class="enter-button">Click to Enter</button>
+            <img src="perk_logo.png" alt="Logo" class="logo">
         </div>
     </div>
 
     <!-- Video Container -->
-    <div class="video-container" style="display:none;">
+    <div class="video-container">
         <video id="video" autoplay loop muted>
             <source src="https://r2.worst.fail/users/kaden/kaden.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
 
-    <!-- Social Media Buttons -->
-    <div class="social-buttons">
-        <a href="https://cash.app" target="_blank"><img src="cashapp-icon.png" alt="CashApp" class="social-icon"></a>
-        <a href="https://discord.com" target="_blank"><img src="discord-icon.png" alt="Discord" class="social-icon"></a>
-    </div>
+    <!-- Scripts -->
+    <script src="enter.js"></script>
 </body>
-
 </html>
