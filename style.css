@@ -94,16 +94,18 @@ body, html {
 
 #textBox {
   background-color: rgba(40, 40, 40, 0.9);
-  padding: 20px;
+  padding: 30px;  /* Increase padding for a bigger box */
   border-radius: 10px;
-  max-width: 80%;
+  max-width: 90%;  /* Make the box wider */
   color: white;
+  font-size: 1em;  /* Larger font size for the whole text */
 }
 
+/* Adjust individual text sizes */
 #titleText {
   font-weight: bold;
   color: white;
-  font-size: 1.8em;
+  font-size: 2.8em;  /* Increase the title font size */
   white-space: nowrap;
   margin: 0;
 }
@@ -111,7 +113,7 @@ body, html {
 #discordText {
   font-weight: normal;
   color: grey;
-  font-size: 0.8em;
+  font-size: 1.2em;  /* Increase the Discord link font size */
   text-align: center;
   margin: 0;
 }
@@ -119,7 +121,7 @@ body, html {
 #bioText {
   font-weight: normal;
   color: grey;
-  font-size: 0.7em; /* Slightly smaller font size */
+  font-size: 1em;  /* Increase bio text font size */
   text-align: center;
   margin: 0;
 }
