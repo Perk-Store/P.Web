@@ -10,14 +10,13 @@ enterButton.addEventListener('click', () => {
   setTimeout(() => {
     enterButton.style.display = 'none';
     videoContainer.style.display = 'block';
-    textBoxContainer.style.display = 'block';
-    circleImage.style.opacity = '1';
-    textBoxContainer.style.opacity = '1';
+    textBoxContainer.style.display = 'block'; // Show the text box container
+    circleImage.style.opacity = '1'; // Fade in the circular image
+    textBoxContainer.style.opacity = '1'; // Fade in the text box
 
     setTimeout(() => {
       videoContainer.style.opacity = '1';
       video.play();
-      circleImage.style.opacity = '1';
     }, 100);
   }, 500);
 });
