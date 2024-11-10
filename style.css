@@ -90,28 +90,28 @@ body, html {
 
 /* Text styles */
 #textBox h1 {
-  font-family: 'Arial', sans-serif; /* Ensure font is set */
-  font-size: 2.5em;  /* Adjust size */
+  font-family: 'Arial', sans-serif;
+  font-size: 2.5em;
   font-weight: bold;
   color: white;
   margin: 0;
 }
 
 #textBox p {
-  font-family: 'Arial', sans-serif; /* Ensure font is set */
+  font-family: 'Arial', sans-serif;
   font-size: 1.2em;
   color: grey;
   margin: 5px 0;
 }
 
 #textBox .discord {
-  font-family: 'Arial', sans-serif; /* Ensure font is set */
+  font-family: 'Arial', sans-serif;
   font-size: 1em;
   color: grey;
 }
 
 #textBox .bio {
-  font-family: 'Arial', sans-serif; /* Ensure font is set */
+  font-family: 'Arial', sans-serif;
   font-size: 0.9em;
   color: grey;
 }
@@ -132,9 +132,11 @@ body, html {
 }
 
 /* Image buttons styling */
-#textBox .image-button {
-  display: inline-block;
-  margin: 0 15px;
+#textBox .image-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
 }
 
 #textBox .image-button img {
