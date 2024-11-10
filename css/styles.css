@@ -67,16 +67,16 @@ body, html {
 }
 
 .circular-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    opacity: 0;
-    transition: opacity 2s ease;
-    position: absolute;
-    top: calc(50% + 100px); /* Adjust position as needed */
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes the image circular */
+    overflow: hidden; /* Ensures no overflow */
+    opacity: 1; /* Ensure image is visible */
+    transition: opacity 2s ease; /* Fade transition */
+    position: absolute; /* Position it absolutely to control overlap */
+    top: calc(-25% - 50px); /* 25% above the black box (adjust the value if needed) */
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%); /* Centers the image horizontally */
 }
 
 .circular-image img {
