@@ -48,8 +48,10 @@ html, body {
     z-index: -1; 
 }
 
-.fade-in {
+/* Make sure the video plays and is visible */
+.video-container.fade-in {
     opacity: 1; 
+    visibility: visible; /* Ensure visibility is set to visible */
 }
 
 .name-box {
@@ -81,9 +83,11 @@ html, body {
     overflow: hidden; /* Ensures no overflow */
     opacity: 0; /* Start invisible */
     transition: opacity 2s ease; /* Fade transition */
-    margin: 10px auto; /* Move further up */
+    margin: 10px auto; /* Centers it */
     position: relative; /* Allows positioning adjustments */
-    top: -30px; /* Adjust this value to move it up further */
+    top: 20px; /* Adjust if needed for better alignment */
+    left: 50%; /* Centers the image horizontally */
+    transform: translateX(-50%); /* Aligns the image */
 }
 
 .circular-image img {
