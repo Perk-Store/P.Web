@@ -1,22 +1,20 @@
-document.querySelector(".enter-button").addEventListener("click", function () {
-    // Hide the "Click to Enter" button
-    document.querySelector(".container").style.display = "none";
+// When the page loads, we make sure the video is ready to play.
+window.onload = () => {
+    const video = document.getElementById('video');
+    video.load(); // Ensure the video is loaded before interacting with it
+};
 
-    // Show the video and play it
-    const videoContainer = document.querySelector(".video-container");
-    videoContainer.style.display = "block";  // Ensure it's visible
-    videoContainer.style.opacity = "1";     // Make sure the video is fully visible
+// Handle button click to play video and show the video container
+document.querySelector('.enter-button').addEventListener('click', function() {
+    // Show the video container and start playing the video
+    const videoContainer = document.querySelector('.video-container');
+    videoContainer.style.visibility = 'visible';
+    videoContainer.style.opacity = '1';
 
-    const video = document.getElementById("video");
-    video.play();
+    const video = document.getElementById('video');
+    video.play();  // Explicitly play the video
 
-    // Fade in the name box
-    const nameBox = document.querySelector(".name-box");
-    nameBox.style.opacity = "1";
-
-    // Fade in the buttons
-    const smallButton = document.querySelector(".small-button");
-    const secondButton = document.querySelector(".second-button");
-    smallButton.style.opacity = "1";
-    secondButton.style.opacity = "1";
+    // Hide the container (and other elements if needed)
+    const buttonContainer = document.querySelector('.container');
+    buttonContainer.style.display = 'none';
 });
