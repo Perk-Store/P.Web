@@ -9,6 +9,7 @@
   opacity: 1;
 }
 
+/* Full viewport background */
 body, html {
   height: 100%;
   display: flex;
@@ -21,6 +22,7 @@ body, html {
   padding: 0;
 }
 
+/* Container for Enter button */
 #enterButtonContainer {
   z-index: 2;
   display: flex;
@@ -30,6 +32,7 @@ body, html {
   width: 100%;
 }
 
+/* Button styling */
 #enterButton {
   padding: 15px 30px;
   font-size: 1.2em;
@@ -48,6 +51,7 @@ body, html {
   border-color: white;
 }
 
+/* Video container styling */
 #videoContainer {
   display: none;
   position: fixed;
@@ -67,88 +71,62 @@ body, html {
   object-fit: cover;
 }
 
-#textBoxContainer {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
+/* Text box styling */
+#textBox {
   display: none;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
-  text-align: center;
-}
-
-#circleImage {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  position: absolute;
-  top: -75px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-#textBox {
-  background-color: rgba(40, 40, 40, 0.9);
-  padding: 30px;  /* Increased padding */
+  background-color: rgba(18, 18, 18, 0.8);
+  width: 80%;
+  max-width: 800px;
+  padding: 20px;
   border-radius: 10px;
-  max-width: 90%;  /* Wider box */
-  color: white;
-  font-size: 1em;  /* Larger font size */
   text-align: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 1s ease-in-out;
+  z-index: 3;
 }
 
-/* Adjust individual text sizes */
-#titleText {
+#textBox h1 {
+  font-size: 2em;
   font-weight: bold;
   color: white;
-  font-size: 2.8em;  /* Larger title font size */
-  white-space: nowrap;
   margin: 0;
 }
 
-#discordText {
-  font-weight: normal;
+#textBox p {
+  font-size: 1.2em;
   color: grey;
-  font-size: 1.2em;  /* Slightly larger Discord link font size */
-  text-align: center;
-  margin: 0;
+  margin: 10px 0;
 }
 
-#bioText {
-  font-weight: normal;
-  color: grey;
-  font-size: 1em;  /* Larger bio text font size */
-  margin: 0;
-  border-bottom: 2px solid white;  /* Line under the bio */
-  padding-bottom: 10px;  /* Space between bio and the line */
+#textBox img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
 }
 
-/* Image button container */
-#imageButtonContainer {
-  display: flex;
-  justify-content: center;
-  gap: 20px;  /* Space between buttons */
-  margin-top: 20px;
+#textBox hr {
+  border: 1px solid #ddd;
+  margin: 20px 0;
 }
 
-/* Individual image button */
-#imageButtonContainer a {
+/* Image buttons styling */
+#textBox .image-button {
   display: inline-block;
+  margin: 0 15px;
 }
 
-#imageButtonContainer img {
-  width: 100px;  /* Image size */
-  height: 100px;
+#textBox .image-button img {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
   cursor: pointer;
-  border-radius: 10px;
   transition: transform 0.3s ease;
 }
 
-#imageButtonContainer img:hover {
-  transform: scale(1.1);  /* Scale the image on hover */
+#textBox .image-button img:hover {
+  transform: scale(1.1);
 }
