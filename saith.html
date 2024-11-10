@@ -4,13 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>𝕡-Saith</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css"> <!-- Link to the external CSS -->
+</head>
+<body>
+    <div class="container">
+        <button class="enter-button">Click to Enter</button>
+    </div>
+    <div class="video-container" style="display: none;">
+        <video id="video" autoplay loop muted>
+            <source src="copcar.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="name-box">
+        <div>Saith</div>
+        <div class="subtitle">Drink my piss you nasty slut</div>
+    </div>
+    <div class="circular-image">
+        <img src="saith.png" alt="Saith Image">
+    </div>
+    <div class="saith-video-container" style="opacity: 0; visibility: hidden;">
+        <video id="saith-video" autoplay loop>
+            <source src="copcar.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
     <script>
         const prefix = '𝕡-'; 
         const originalPart = 'Perk'; 
         const newPart = 'Saith'; 
         let index = originalPart.length;
         let deleting = true;
+
         function animateTitle() {
             let animatedPart = deleting ? originalPart.substring(0, index) : newPart.substring(0, index);
             document.title = prefix + animatedPart;
@@ -29,9 +55,11 @@
             }
             setTimeout(animateTitle, 200); 
         }
+
         window.onload = () => {
             animateTitle();
         };
+
         function playSaithVideo() {
             const videoContainer = document.querySelector('.saith-video-container');
             videoContainer.style.visibility = 'visible'; 
@@ -40,53 +68,12 @@
             saithVideo.currentTime = 0; // Reset to the beginning
             saithVideo.play(); 
         }
+
         function fadeInElements() {
             const circularImage = document.querySelector('.circular-image');
             circularImage.style.opacity = '1'; 
         }
-    </script>
-    <style>
-        .circular-image {
-            width: 100px; /* Adjust size as needed */
-            height: 100px; /* Adjust size as needed */
-            border-radius: 50%; /* Makes the image circular */
-            overflow: hidden; /* Ensures no overflow */
-            opacity: 0; /* Start invisible */
-            transition: opacity 2s ease; /* Fade transition */
-            margin: 10px auto; /* Move further up */
-            position: relative; /* Allows positioning adjustments */
-            top: -30px; /* Adjust this value to move it up further */
-        }
-        .circular-image img {
-            width: 100%; /* Fill the circular container */
-            height: auto; /* Maintain aspect ratio */
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <button class="enter-button">Click to Enter</button>
-    </div>
-    <div class="video-container" style="display: none;">
-        <video id="video" autoplay loop muted>
-            <source src="copcar.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    <div class="name-box">
-        <div>Saith</div>
-        <div class="subtitle">Drink my piss you nasty slut</div>
-    </div>
-    <div class="circular-image" style="opacity: 0;">
-        <img src="saith.png" alt="Saith Image"> <!-- Circular image -->
-    </div>
-    <div class="saith-video-container" style="opacity: 0; visibility: hidden;">
-        <video id="saith-video" autoplay loop>
-            <source src="copcar.mp4" type="video/mp4"> <!-- Ensure this path is correct -->
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    <script>
+
         document.querySelector('.enter-button').addEventListener('click', function() {
             document.querySelector('.container').style.display = 'none';
             // Show the circular image and video
