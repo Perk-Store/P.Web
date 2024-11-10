@@ -9,15 +9,15 @@ enterButton.addEventListener('click', () => {
 
   setTimeout(() => {
     enterButton.style.display = 'none';
+    videoContainer.style.display = 'block';
     textBoxContainer.style.display = 'block';
+    circleImage.style.opacity = '1';
+    textBoxContainer.style.opacity = '1';
 
     setTimeout(() => {
-      textBoxContainer.style.opacity = '1';
+      videoContainer.style.opacity = '1';
+      video.play();
       circleImage.style.opacity = '1';
-
-      videoContainer.style.display = 'block';  // Make video container visible
-      videoContainer.style.opacity = '1';  // Fade in the video container
-      video.play();  // Start playing the video
     }, 100);
   }, 500);
 });
@@ -86,6 +86,3 @@ document.addEventListener('DOMContentLoaded', function () {
   };
   document.head.append(script);
 });
-
-circleImage.style.opacity = '0';
-textBoxContainer.style.opacity = '0';
