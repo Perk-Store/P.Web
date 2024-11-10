@@ -100,9 +100,9 @@ body, html {
 
 .small-button,
 .second-button {
-    width: 20px;
-    height: 20px;
-    background-size: 100% 100%;
+    width: 50px; /* Adjust size of the buttons */
+    height: 50px;
+    background-size: cover; /* Ensure the image covers the button size */
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
@@ -110,16 +110,17 @@ body, html {
     top: calc(50% + 90px);
     opacity: 0;
     transition: opacity 2s ease;
+    z-index: 2;
 }
 
 .small-button {
     left: calc(50% - 105px);
-    background-image: url('download.png');
+    background-image: url('images/download.png'); /* Use relative path to image */
 }
 
 .second-button {
     left: calc(50% - 80px);
-    background-image: url('Cashapp.png');
+    background-image: url('images/Cashapp.png'); /* Use relative path to image */
 }
 
 video {
