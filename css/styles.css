@@ -1,7 +1,8 @@
-/* General styles */
-body, html {
+/* Prevent scrolling on the entire website */
+html, body {
     height: 100%;
     margin: 0;
+    overflow: hidden; /* Disables scrolling */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,6 +10,7 @@ body, html {
     transition: opacity 1s ease; 
 }
 
+/* Existing styles */
 .container {
     text-align: center;
 }
