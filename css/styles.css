@@ -1,4 +1,5 @@
-body, html { 
+/* General styles */
+body, html {
     height: 100%;
     margin: 0;
     display: flex;
@@ -72,48 +73,23 @@ body, html {
 }
 
 .circular-image {
-    width: 100px; 
-    height: 100px; 
-    border-radius: 50%; 
-    overflow: hidden; 
-    opacity: 0; 
-    transition: opacity 2s ease; 
-    position: absolute; 
-    top: calc(50% + 100px); /* Adjust position as needed */
-    left: 50%;
-    transform: translate(-50%, -50%); /* Center horizontally */
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes the image circular */
+    overflow: hidden; /* Ensures no overflow */
+    opacity: 0; /* Start invisible */
+    transition: opacity 2s ease; /* Fade transition */
+    margin: 10px auto; /* Move further up */
+    position: relative; /* Allows positioning adjustments */
+    top: -30px; /* Adjust this value to move it up further */
 }
 
 .circular-image img {
-    width: 100%; 
-    height: auto; 
+    width: 100%; /* Fill the circular container */
+    height: auto; /* Maintain aspect ratio */
 }
 
-.small-button,
-.second-button {
-    width: 20px; 
-    height: 20px; 
-    background-size: 100% 100%; 
-    background-repeat: no-repeat; 
-    border: none; 
-    cursor: pointer; 
-    position: absolute; 
-    top: calc(50% + 90px); 
-    opacity: 0; 
-    transition: opacity 2s ease; 
-}
-
-.small-button {
-    left: calc(50% - 105px); 
-    background-image: url('download.png'); 
-}
-
-.second-button {
-    left: calc(50% - 80px); 
-    background-image: url('Cashapp.png'); 
-}
-
-video {
-    width: 100%; 
-    height: auto; 
+.saith-video-container {
+    opacity: 0; /* Initially invisible */
+    visibility: hidden; /* Hide initially */
 }
