@@ -9,7 +9,6 @@
   opacity: 1;
 }
 
-/* Full viewport background */
 body, html {
   height: 100%;
   display: flex;
@@ -22,7 +21,6 @@ body, html {
   padding: 0;
 }
 
-/* Container for Enter button */
 #enterButtonContainer {
   z-index: 2;
   display: flex;
@@ -32,7 +30,6 @@ body, html {
   width: 100%;
 }
 
-/* Button styling */
 #enterButton {
   padding: 15px 30px;
   font-size: 1.2em;
@@ -51,7 +48,6 @@ body, html {
   border-color: white;
 }
 
-/* Video container styling */
 #videoContainer {
   display: none;
   position: fixed;
@@ -71,7 +67,6 @@ body, html {
   object-fit: cover;
 }
 
-/* Semi-transparent dark grey text box */
 #textBoxContainer {
   position: fixed;
   top: 50%;
@@ -84,18 +79,18 @@ body, html {
   text-align: center;
 }
 
-/* Circle image above the text box */
 #circleImage {
-  width: 100px; /* Adjust size */
-  height: 100px; /* Adjust size */
-  border-radius: 50%; /* Makes it a circle */
-  object-fit: cover; /* Ensures the image covers the circle area */
-  margin-bottom: 20px; /* Space between the image and the text box */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
-/* Text box styling */
 #textBox {
-  background-color: rgba(40, 40, 40, 0.9); /* Dark grey with slight transparency */
+  background-color: rgba(40, 40, 40, 0.9);
   padding: 20px;
   border-radius: 10px;
   max-width: 80%;
