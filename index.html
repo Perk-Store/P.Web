@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perk Store</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Include particles.js script -->
-    <script src="particles.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>𝕡-Perk</title>
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="./css/styles.css" />
 </head>
 <body>
-    <!-- Particles container -->
-    <div id="snow"></div>
-
-    <!-- Main Content -->
     <div class="container">
         <button class="enter-button">Click to Enter</button>
-        <div class="logo-container">
-            <img src="perk_logo.png" alt="Logo" class="logo">
-        </div>
     </div>
-
-    <!-- Video Container -->
+    
+    <!-- Video container, initially hidden -->
     <div class="video-container">
         <video id="video" autoplay loop muted>
             <source src="https://r2.worst.fail/users/kaden/kaden.mp4" type="video/mp4">
@@ -28,7 +20,20 @@
         </video>
     </div>
 
-    <!-- Scripts -->
-    <script src="enter.js"></script>
+    <!-- Name box -->
+    <div class="name-box">
+        <div>Perk Store</div>
+        <div class="subtitle">Hardest private bio links</div>
+    </div>
+
+    <!-- Hidden circular image and small buttons -->
+    <div class="circular-image">
+        <img src="perk_logo.png" alt="Perk Image"> <!-- Circular image -->
+    </div>
+    <button class="small-button"></button>
+    <button class="second-button"></button>
+
+    <!-- Link to enter.js JavaScript file -->
+    <script src="./js/enter.js"></script>
 </body>
 </html>
