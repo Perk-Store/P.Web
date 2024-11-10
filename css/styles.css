@@ -8,18 +8,19 @@ body {
     height: 100vh;
     margin: 0;
     overflow: hidden;
+    flex-direction: column;  /* Ensures children stack vertically */
 }
 
 /* Container for the page elements */
 .container {
     text-align: center;
     position: relative;
+    z-index: 10; /* Keeps the button above the video and background */
 }
 
 /* Enter button */
 .enter-button {
     position: relative;
-    z-index: 10;  /* Make sure the button is above the video */
     padding: 15px 30px;
     font-size: 20px;
     cursor: pointer;
@@ -28,6 +29,8 @@ body {
     background-color: black;
     color: white;
     transition: background-color 0.3s, color 0.3s;
+    z-index: 10;  /* Ensures the button stays above everything */
+    margin-top: 50px; /* Add a margin to separate from the top of the screen */
 }
 
 .enter-button:hover {
