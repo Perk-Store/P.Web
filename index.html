@@ -10,20 +10,28 @@
     <div class="container">
         <button class="enter-button">Click to Enter</button>
     </div>
+
+    <!-- Video container, initially hidden -->
     <div class="video-container">
-        <video id="video" autoplay loop muted>
-            <source src="https://r2.worst.fail/users/kaden/kaden.mp4" type="video/mp4" />
+        <video id="video" autoplay loop>
+            <source src="https://r2.worst.fail/users/kaden/kaden.mp4" type="video/mp4">
+            Your browser does not support the video tag.
         </video>
     </div>
+
+    <!-- Name box -->
     <div class="name-box">
         <div>Perk Store</div>
         <div class="subtitle">Hardest private bio links</div>
     </div>
+
+    <!-- Hidden circular image and small buttons -->
     <div class="circular-image">
-        <img src="perk_logo.png" alt="Circular Image">
+        <img src="perk_logo.png" alt="Perk Image"> <!-- Circular image -->
     </div>
     <button class="small-button"></button>
-    <button class="small-button second-button"></button>
+    <button class="second-button"></button>
+
     <script src="./js/enter.js"></script>
 </body>
 </html>
