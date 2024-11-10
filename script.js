@@ -9,16 +9,16 @@ enterButton.addEventListener('click', () => {
   setTimeout(() => {
     enterButton.style.display = 'none';
     
-    // Display the video container and text box after a small delay
+    // Show the video container and text box after the delay
     videoContainer.style.display = 'block';
-    textBox.style.display = 'block';
+    textBox.style.display = 'block'; // Make sure the text box is set to block before fading in
 
     // Fade in the video container and text box
     setTimeout(() => {
       videoContainer.style.opacity = '1';
       textBox.style.opacity = '1'; // Fade in text box
       video.play();
-    }, 100); // Delay the opacity changes a little to ensure smooth fade-in
+    }, 100); // Delay before starting opacity changes for smooth transition
   }, 500); // Delay before hiding the enter button
 });
 
