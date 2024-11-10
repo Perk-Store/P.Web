@@ -1,130 +1,84 @@
-* {
+body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body, html {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    overflow: hidden; /* Disable scroll */
+    overflow: hidden;
 }
 
 .container {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    width: 100%;
     z-index: 1;
 }
 
 .enter-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 15px 30px;
-    font-size: 20px;
-    cursor: pointer;
-    border: 2px solid white;
-    border-radius: 5px;
-    background-color: black;
+    background-color: transparent;
+    border: none;
     color: white;
-    transition: background-color 0.3s, color 0.3s;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
     z-index: 2;
-}
-
-.enter-button:hover {
-    background-color: white;
-    color: black;
 }
 
 .video-container {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: none;
     width: 100%;
     height: 100%;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 2s ease;
-    z-index: -1;
-}
-
-.fade-in {
-    opacity: 1;
+    position: absolute;
+    top: 0;
+    z-index: 0;
 }
 
 .name-box {
-    position: absolute;
-    top: calc(50% + 40px);
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px 40px;
-    background-color: rgba(64, 64, 64, 0.8);
-    color: white;
-    font-size: 30px;
     text-align: center;
     opacity: 0;
-    transition: opacity 2s ease;
-    z-index: 1;
-    border-radius: 10px;
-}
-
-.subtitle {
-    font-size: 16px;
+    z-index: 3;
     color: white;
-    margin-top: 5px;
 }
 
 .circular-image {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     overflow: hidden;
-    opacity: 1;
-    transition: opacity 2s ease;
-    margin: 10px auto;
     position: absolute;
-    top: -25%; /* Overlap with the box */
+    top: -75px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 2;
+    opacity: 1;
+    z-index: 4;
 }
 
 .circular-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
-.small-button,
-.second-button {
-    width: 50px; /* Adjust size of the buttons */
+.small-button, .second-button {
+    width: 50px;
     height: 50px;
-    background-size: cover; /* Ensure the image covers the button size */
-    background-repeat: no-repeat;
+    background-size: cover;
     border: none;
+    background-position: center;
     cursor: pointer;
-    position: absolute;
-    top: calc(50% + 90px);
     opacity: 0;
-    transition: opacity 2s ease;
-    z-index: 2;
+    transition: opacity 0.3s ease;
 }
 
 .small-button {
-    left: calc(50% - 105px);
-    background-image: url('download.png'); /* Direct path to the image */
+    background-image: url('button1-image.png');
 }
 
 .second-button {
-    left: calc(50% - 80px);
-    background-image: url('Cashapp.png'); /* Direct path to the image */
+    background-image: url('button2-image.png');
 }
 
-video {
-    width: 100%;
-    height: auto;
-    z-index: -2; /* Ensure video is behind other elements */
+.fade-in {
+    opacity: 1 !important;
+    transition: opacity 1s ease-in-out;
 }
