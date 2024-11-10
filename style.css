@@ -65,6 +65,7 @@ body, html {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  loop: true; /* Make the video loop */
 }
 
 #textBoxContainer {
@@ -87,7 +88,7 @@ body, html {
   opacity: 0;
   transition: opacity 1s ease-in-out;
   position: absolute;
-  top: -25%; /* This will make the image overlap the text box by 25% */
+  top: -12.5%; /* Adjust the image to overlap the text box by 25% */
   left: 50%;
   transform: translateX(-50%);
 }
