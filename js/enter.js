@@ -1,37 +1,32 @@
-// Handle the "Enter" button click event
-document.querySelector('.enter-button').addEventListener('click', function() {
-    // Hide the container with the enter button
-    document.querySelector('.container').style.display = 'none';
+document.querySelector(".enter-button").addEventListener("click", function () {
+    // Hide the enter button and video container, initially hidden
+    document.querySelector(".container").style.display = "none";
 
-    // Show the video container and circular image with fade-in effect
-    const videoContainer = document.querySelector('.video-container');
-    videoContainer.classList.add('fade-in'); // Add fade-in class to make the video visible
-    videoContainer.style.visibility = 'visible';
-    videoContainer.style.opacity = '1'; // Make sure the video container is visible
+    // Make the video container visible and play the video
+    const videoContainer = document.querySelector(".video-container");
+    videoContainer.style.visibility = "visible";
+    videoContainer.classList.add("fade-in");
+    videoContainer.style.opacity = "1";
 
-    const nameBox = document.querySelector('.name-box');
-    nameBox.style.opacity = '1'; // Show the name box
+    // Show name box
+    const nameBox = document.querySelector(".name-box");
+    nameBox.style.opacity = "1";
 
-    const circularImage = document.querySelector('.circular-image');
-    circularImage.style.opacity = '1'; // Fade in the circular image
+    // Show small buttons (delayed after video and name box fade in)
+    const smallButton = document.querySelector(".small-button");
+    const secondButton = document.querySelector(".second-button");
+    smallButton.style.opacity = "1";
+    secondButton.style.opacity = "1";
 
-    // Play the main video
-    const video = document.getElementById('video');
-    video.play(); // Ensure the main video is played
-
-    // Optionally, play the saith video if present
-    const saithVideo = document.getElementById('saith-video');
-    if (saithVideo) {
-        saithVideo.play(); // Play the secondary saith video (if it's there)
-    }
+    // Play the video
+    const video = document.getElementById("video");
+    video.play();
 });
 
-// Handle small button click (Discord link)
-document.querySelector('.small-button').addEventListener('click', function() {
+document.querySelector(".small-button").addEventListener("click", function () {
     window.open("https://discord.gg/perkdc", "_blank");
 });
 
-// Handle second small button click (Cashapp link)
-document.querySelector('.second-button').addEventListener('click', function() {
+document.querySelector(".second-button").addEventListener("click", function () {
     window.open("https://cash.app/$Kadenru", "_blank");
 });
