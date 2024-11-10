@@ -84,10 +84,12 @@ body, html {
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 10px;
   opacity: 0;
   transition: opacity 1s ease-in-out;
-  margin-top: -25%; /* Lower the image and make it overlap */
+  position: absolute;
+  top: -25%; /* This will make the image overlap the text box by 25% */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 #textBox {
@@ -98,3 +100,4 @@ body, html {
   color: white;
   font-size: 1.5em;
 }
+Key chang
