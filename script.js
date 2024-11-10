@@ -1,6 +1,8 @@
 const enterButton = document.getElementById('enterButton');
 const videoContainer = document.getElementById('videoContainer');
 const video = document.querySelector('#videoContainer video');
+const textBoxContainer = document.getElementById('textBoxContainer');
+const audio = document.getElementById('audio');
 
 enterButton.addEventListener('click', () => {
   enterButton.style.opacity = '0';
@@ -8,10 +10,13 @@ enterButton.addEventListener('click', () => {
   setTimeout(() => {
     enterButton.style.display = 'none';
     videoContainer.style.display = 'block';
+    textBoxContainer.style.display = 'block'; // Show the text box
+    textBoxContainer.style.opacity = '1'; // Fade it in
 
     setTimeout(() => {
       videoContainer.style.opacity = '1';
-      video.play();
+      video.play();  // Start the video and audio
+      audio.play();  // Start the audio
     }, 100);
   }, 500);
 });
