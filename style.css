@@ -88,9 +88,9 @@ body, html {
   z-index: 3;
 }
 
-/* Ensure all text is centered */
+/* Text styles */
 #textBox h1 {
-  font-size: 2em;
+  font-size: 2.5em;  /* Adjust size */
   font-weight: bold;
   color: white;
   margin: 0;
@@ -104,10 +104,12 @@ body, html {
 
 #textBox .discord {
   font-size: 1em;
+  color: grey;
 }
 
 #textBox .bio {
   font-size: 0.9em;
+  color: grey;
 }
 
 #textBox img {
