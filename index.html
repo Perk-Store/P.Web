@@ -4,13 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>𝕡-Perk</title>
+
+    <!-- External CSS link -->
     <link rel="stylesheet" href="./css/styles.css" />
+
+    <!-- External JS for Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
 </head>
 <body>
+    <!-- Particles background -->
+    <div id="snow"></div>
+
+    <!-- Main content container -->
     <div class="container">
+        <div class="circular-image">
+            <img src="perk_logo.png" alt="Perk Logo">
+        </div>
+
+        <div class="name-box">
+            <div>Perk Store</div>
+            <div class="subtitle">Hardest private bio links</div>
+        </div>
+
         <button class="enter-button">Click to Enter</button>
+
+        <div class="social-buttons">
+            <a href="https://cash.app/$perks" target="_blank">CashApp</a>
+            <a href="https://discord.com" target="_blank">Discord</a>
+        </div>
     </div>
 
+    <!-- Video background -->
     <div class="video-container">
         <video id="video" autoplay muted loop>
             <source src="https://r2.worst.fail/users/kaden/kaden.mp4" type="video/mp4" />
@@ -18,15 +42,70 @@
         </video>
     </div>
 
-    <div class="name-box">
-        <div>Perk Store</div>
-        <div class="subtitle">Hardest private bio links</div>
-    </div>
+    <!-- External JS for custom logic -->
+    <script src="./js/enter.js" defer></script>
 
-    <div class="circular-image">
-        <img src="perk_logo.png" alt="Perk Logo">
-    </div>
-
-    <script src="./js/enter.js"></script>
+    <!-- Inline JS for particles setup -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            particlesJS("snow", {
+                "particles": {
+                    "number": {
+                        "value": 40,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "opacity": {
+                        "value": 0.7,
+                        "random": true,
+                        "anim": {
+                            "enable": true
+                        }
+                    },
+                    "size": {
+                        "value": 2.3,
+                        "random": true,
+                        "anim": {
+                            "enable": true
+                        }
+                    },
+                    "line_linked": {
+                        "enable": false
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 5,
+                        "direction": "bottom",
+                        "random": true,
+                        "straight": false,
+                        "out_mode": "out",
+                        "bounce": false,
+                        "attract": {
+                            "enable": true,
+                            "rotateX": 300,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "events": {
+                        "onhover": {
+                            "enable": false
+                        },
+                        "onclick": {
+                            "enable": true
+                        },
+                        "resize": false
+                    }
+                },
+                "retina_detect": true
+            });
+        });
+    </script>
 </body>
 </html>
