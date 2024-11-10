@@ -101,3 +101,16 @@ body, html {
   color: white;
   font-size: 1.5em;
 }
+
+#titleText {
+  font-weight: bold;
+  color: white;
+  font-size: 2em; /* Adjust the size as needed */
+}
+
+#discordText {
+  font-weight: normal;
+  color: grey;
+  font-size: 1.2em; /* Adjust the size as needed */
+  margin-top: 10px;
+}
