@@ -65,7 +65,7 @@ body, html {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  loop: true; /* Make the video loop */
+  loop: true;
 }
 
 #textBoxContainer {
@@ -105,12 +105,13 @@ body, html {
 #titleText {
   font-weight: bold;
   color: white;
-  font-size: 2em; /* Adjust the size as needed */
+  font-size: 1.8em; /* Adjusted font size to fit on one line */
+  white-space: nowrap; /* Prevents text from wrapping to the next line */
 }
 
 #discordText {
   font-weight: normal;
   color: grey;
-  font-size: 1.2em; /* Adjust the size as needed */
+  font-size: 1.2em;
   margin-top: 10px;
 }
