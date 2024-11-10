@@ -1,110 +1,70 @@
-/* General body styling */
+/* General Body Styles */
 body {
     margin: 0;
     padding: 0;
+    height: 100vh;
     font-family: Arial, sans-serif;
     overflow: hidden;
 }
 
-/* Particles.js container */
+/* Particles container */
 #snow {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: -1; /* Make sure it's in the background */
 }
 
-/* Main container styling */
+/* Main content container */
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-/* Logo and name box */
-.logo-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.circular-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-    transition: opacity 0.5s ease;
-}
-
-.name-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
-    margin-bottom: 20px;
+    z-index: 1; /* Make sure it's above particles */
 }
 
-.name-box div {
-    font-size: 32px;
-    color: white;
-}
-
-.subtitle {
-    font-size: 18px;
-    color: white;
-    opacity: 0.7;
-}
-
-/* "Click to Enter" button styling */
+/* Enter button styles */
 .enter-button {
-    padding: 15px 30px;
-    font-size: 16px;
     background-color: #333;
-    color: white;
+    color: #fff;
+    padding: 20px 40px;
+    font-size: 20px;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
 }
 
-.enter-button:hover {
-    background-color: #555;
+/* Logo container and image */
+.logo-container {
+    margin-top: 20px;
 }
 
-/* Video container styling */
+.logo {
+    width: 100px;
+    height: auto;
+    z-index: 2;
+}
+
+/* Video container */
 .video-container {
-    position: absolute;
+    display: none;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
+    background-color: black;
+    z-index: 0; /* Behind the content */
 }
 
 video {
-    max-width: 100%;
-    height: auto;
-    z-index: -1;
-}
-
-/* Social Media Buttons */
-.social-buttons {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.social-icon {
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
