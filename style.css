@@ -88,7 +88,7 @@ body, html {
   opacity: 0;
   transition: opacity 1s ease-in-out;
   position: absolute;
-  top: -75px; /* Move the image up 75px, making 25% of it overlap the text box */
+  top: -75px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -105,14 +105,14 @@ body, html {
 #titleText {
   font-weight: bold;
   color: white;
-  font-size: 1.8em; /* Adjusted font size to fit on one line */
-  white-space: nowrap; /* Prevents text from wrapping to the next line */
+  font-size: 1.8em;
+  white-space: nowrap;
 }
 
 #discordText {
   font-weight: normal;
   color: grey;
-  font-size: 1em; /* Smaller font size */
-  margin-top: 5px; /* Closer to the "Perk Store" text */
-  text-align: center; /* Center the text */
+  font-size: 0.8em; /* Smaller font size */
+  text-align: center;
+  margin-top: 10px; /* Moves it directly under the "Perk Store" text */
 }
