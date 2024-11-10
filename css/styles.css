@@ -115,12 +115,12 @@ body, html {
 
 .small-button {
     left: calc(50% - 105px);
-    background-image: url('images/download.png'); /* Use relative path to image */
+    background-image: url('download.png'); /* Direct path to the image */
 }
 
 .second-button {
     left: calc(50% - 80px);
-    background-image: url('images/Cashapp.png'); /* Use relative path to image */
+    background-image: url('Cashapp.png'); /* Direct path to the image */
 }
 
 video {
