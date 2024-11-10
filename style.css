@@ -71,7 +71,7 @@ body, html {
   object-fit: cover;
 }
 
-/* Semi-transparent black text box */
+/* Semi-transparent dark grey text box */
 #textBoxContainer {
   position: fixed;
   top: 50%;
@@ -84,7 +84,7 @@ body, html {
 }
 
 #textBox {
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  background-color: rgba(40, 40, 40, 0.9); /* Dark grey with slight transparency */
   padding: 20px;
   border-radius: 10px;
   text-align: center;
