@@ -2,21 +2,20 @@ const enterButton = document.getElementById('enterButton');
 const videoContainer = document.getElementById('videoContainer');
 const video = document.querySelector('#videoContainer video');
 const textBoxContainer = document.getElementById('textBoxContainer');
-const audio = document.getElementById('audio');
+const circleImage = document.getElementById('circleImage');
 
 enterButton.addEventListener('click', () => {
   enterButton.style.opacity = '0';
 
   setTimeout(() => {
     enterButton.style.display = 'none';
-    videoContainer.style.display = 'block';
-    textBoxContainer.style.display = 'block'; // Show the text box
-    textBoxContainer.style.opacity = '1'; // Fade it in
+    textBoxContainer.style.display = 'block';
 
     setTimeout(() => {
-      videoContainer.style.opacity = '1';
-      video.play();  // Start the video and audio
-      audio.play();  // Start the audio
+      textBoxContainer.style.opacity = '1';
+      circleImage.style.opacity = '1';
+      videoContainer.style.display = 'block';
+      video.play();
     }, 100);
   }, 500);
 });
@@ -85,3 +84,6 @@ document.addEventListener('DOMContentLoaded', function () {
   };
   document.head.append(script);
 });
+
+circleImage.style.opacity = '0';
+textBoxContainer.style.opacity = '0';
