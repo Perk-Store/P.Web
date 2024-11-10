@@ -94,18 +94,18 @@ body, html {
 
 #textBox {
   background-color: rgba(40, 40, 40, 0.9);
-  padding: 30px;  /* Increase padding for a bigger box */
+  padding: 30px;  /* Increased padding */
   border-radius: 10px;
-  max-width: 90%;  /* Make the box wider */
+  max-width: 90%;  /* Wider box */
   color: white;
-  font-size: 1em;  /* Larger font size for the whole text */
+  font-size: 1em;  /* Larger font size */
 }
 
 /* Adjust individual text sizes */
 #titleText {
   font-weight: bold;
   color: white;
-  font-size: 2.8em;  /* Increase the title font size */
+  font-size: 2.8em;  /* Larger title font size */
   white-space: nowrap;
   margin: 0;
 }
@@ -113,7 +113,7 @@ body, html {
 #discordText {
   font-weight: normal;
   color: grey;
-  font-size: 1.2em;  /* Increase the Discord link font size */
+  font-size: 1.2em;  /* Slightly larger Discord link font size */
   text-align: center;
   margin: 0;
 }
@@ -121,7 +121,9 @@ body, html {
 #bioText {
   font-weight: normal;
   color: grey;
-  font-size: 1em;  /* Increase bio text font size */
+  font-size: 1em;  /* Larger bio text font size */
   text-align: center;
   margin: 0;
+  border-bottom: 2px solid white;  /* Add a line under the bio */
+  padding-bottom: 10px;  /* Space between the bio and the line */
 }
