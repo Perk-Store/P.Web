@@ -81,13 +81,23 @@ body, html {
   display: none;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  text-align: center;
 }
 
+/* Circle image above the text box */
+#circleImage {
+  width: 100px; /* Adjust size */
+  height: 100px; /* Adjust size */
+  border-radius: 50%; /* Makes it a circle */
+  object-fit: cover; /* Ensures the image covers the circle area */
+  margin-bottom: 20px; /* Space between the image and the text box */
+}
+
+/* Text box styling */
 #textBox {
   background-color: rgba(40, 40, 40, 0.9); /* Dark grey with slight transparency */
   padding: 20px;
   border-radius: 10px;
-  text-align: center;
   max-width: 80%;
   color: white;
   font-size: 1.5em;
