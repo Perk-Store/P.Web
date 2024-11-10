@@ -1,8 +1,7 @@
 const enterButton = document.getElementById('enterButton');
 const videoContainer = document.getElementById('videoContainer');
 const video = document.querySelector('#videoContainer video');
-const textBoxContainer = document.getElementById('textBoxContainer');
-const circleImage = document.getElementById('circleImage');
+const textBox = document.getElementById('textBox');
 
 enterButton.addEventListener('click', () => {
   enterButton.style.opacity = '0';
@@ -10,9 +9,7 @@ enterButton.addEventListener('click', () => {
   setTimeout(() => {
     enterButton.style.display = 'none';
     videoContainer.style.display = 'block';
-    textBoxContainer.style.display = 'block'; // Show the text box container
-    circleImage.style.opacity = '1'; // Fade in the circular image
-    textBoxContainer.style.opacity = '1'; // Fade in the text box
+    textBox.style.display = 'block';  // Make the text box and buttons visible
 
     setTimeout(() => {
       videoContainer.style.opacity = '1';
