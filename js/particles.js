@@ -59,6 +59,6 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             "retina_detect": true
         });
-    }
+    };
     document.head.append(script);
 });
