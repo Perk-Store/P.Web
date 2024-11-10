@@ -8,9 +8,12 @@ enterButton.addEventListener('click', () => {
 
   setTimeout(() => {
     enterButton.style.display = 'none';
+    
+    // Display the video container and text box
     videoContainer.style.display = 'block';
-    textBox.style.display = 'block';  // Make the text box and buttons visible
+    textBox.style.display = 'block';
 
+    // Allow video opacity transition and start the video
     setTimeout(() => {
       videoContainer.style.opacity = '1';
       video.play();
