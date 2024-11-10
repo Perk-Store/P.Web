@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body, html {
     height: 100%;
     margin: 0;
@@ -5,16 +11,19 @@ body, html {
     justify-content: center;
     align-items: center;
     background-color: black;
-    overflow: hidden;
+    overflow: hidden; /* Disable scroll */
 }
 
 .container {
     text-align: center;
-    z-index: 20;
-    position: relative;
+    z-index: 1;
 }
 
 .enter-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 15px 30px;
     font-size: 20px;
     cursor: pointer;
@@ -23,10 +32,6 @@ body, html {
     background-color: black;
     color: white;
     transition: background-color 0.3s, color 0.3s;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 2;
 }
 
@@ -82,10 +87,10 @@ body, html {
     transition: opacity 2s ease;
     margin: 10px auto;
     position: absolute;
-    top: calc(50% - 70px);
+    top: -25%; /* Overlap with the box */
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1;
+    z-index: 2;
 }
 
 .circular-image img {
@@ -120,4 +125,5 @@ body, html {
 video {
     width: 100%;
     height: auto;
+    z-index: -2; /* Ensure video is behind other elements */
 }
