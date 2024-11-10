@@ -1,10 +1,7 @@
-body, html {
+html, body {
     height: 100%;
     margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
+    overflow: hidden;
 }
 
 .container {
@@ -44,20 +41,20 @@ body, html {
     z-index: -1;
 }
 
+.fade-in {
+    opacity: 1;
+}
+
 .name-box {
-    position: absolute;
-    top: calc(50% + 40px);
+    position: relative;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 20px 40px;
-    background-color: rgba(64, 64, 64, 0.8);
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
     color: white;
-    font-size: 30px;
+    font-size: 24px;
     text-align: center;
-    opacity: 0;
-    transition: opacity 2s ease;
-    z-index: 1;
-    border-radius: 10px;
 }
 
 .subtitle {
@@ -67,16 +64,16 @@ body, html {
 }
 
 .circular-image {
-    width: 100px; /* Adjust size as needed */
-    height: 100px; /* Adjust size as needed */
-    border-radius: 50%; /* Makes the image circular */
-    overflow: hidden; /* Ensures no overflow */
-    opacity: 1; /* Ensure image is visible */
-    transition: opacity 2s ease; /* Fade transition */
-    position: absolute; /* Position it absolutely to control overlap */
-    top: calc(-25% - 50px); /* 25% above the black box (adjust the value if needed) */
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 2s ease;
+    position: absolute;
+    top: calc(-25% - 50px);
     left: 50%;
-    transform: translateX(-50%); /* Centers the image horizontally */
+    transform: translateX(-50%);
 }
 
 .circular-image img {
