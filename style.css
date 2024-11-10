@@ -90,6 +90,7 @@ body, html {
 
 /* Text styles */
 #textBox h1 {
+  font-family: 'Arial', sans-serif; /* Ensure font is set */
   font-size: 2.5em;  /* Adjust size */
   font-weight: bold;
   color: white;
@@ -97,17 +98,20 @@ body, html {
 }
 
 #textBox p {
+  font-family: 'Arial', sans-serif; /* Ensure font is set */
   font-size: 1.2em;
   color: grey;
   margin: 5px 0;
 }
 
 #textBox .discord {
+  font-family: 'Arial', sans-serif; /* Ensure font is set */
   font-size: 1em;
   color: grey;
 }
 
 #textBox .bio {
+  font-family: 'Arial', sans-serif; /* Ensure font is set */
   font-size: 0.9em;
   color: grey;
 }
