@@ -9,7 +9,6 @@
   opacity: 1;
 }
 
-/* Full viewport background */
 body, html {
   height: 100%;
   display: flex;
@@ -22,7 +21,6 @@ body, html {
   padding: 0;
 }
 
-/* Container for Enter button */
 #enterButtonContainer {
   z-index: 2;
   display: flex;
@@ -32,7 +30,6 @@ body, html {
   width: 100%;
 }
 
-/* Button styling */
 #enterButton {
   padding: 15px 30px;
   font-size: 1.2em;
@@ -51,7 +48,6 @@ body, html {
   border-color: white;
 }
 
-/* Video container styling */
 #videoContainer {
   display: none;
   position: fixed;
@@ -71,11 +67,11 @@ body, html {
   object-fit: cover;
 }
 
-/* Text box styling */
 #textBox {
   display: none;
   opacity: 0;
   background-color: rgba(18, 18, 18, 0.8);
+  backdrop-filter: blur(10px); /* Adds blur to the background */
   width: 80%;
   max-width: 800px;
   padding: 20px;
@@ -88,7 +84,6 @@ body, html {
   z-index: 3;
 }
 
-/* Text styles */
 #textBox h1 {
   font-family: 'Arial', sans-serif;
   font-size: 2.5em;
@@ -131,7 +126,6 @@ body, html {
   margin-right: auto;
 }
 
-/* Image buttons styling */
 #textBox .image-buttons {
   display: flex;
   justify-content: center;
