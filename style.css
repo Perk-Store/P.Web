@@ -71,7 +71,7 @@ body, html {
   display: none;
   opacity: 0;
   background-color: rgba(18, 18, 18, 0.8);
-  backdrop-filter: blur(10px); /* Adds blur to the background */
+  backdrop-filter: blur(10px);
   width: 80%;
   max-width: 800px;
   padding: 20px;
@@ -132,6 +132,15 @@ body, html {
   justify-content: center;
   gap: 30px;
   margin-top: 20px;
+}
+
+#textBox .image-buttons a {
+  color: white;
+  text-decoration: none;
+}
+
+#textBox .image-buttons a:hover {
+  color: #cccccc;
 }
 
 #textBox .image-button img {
