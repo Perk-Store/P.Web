@@ -137,10 +137,13 @@ body, html {
 #textBox .image-buttons a {
   color: white;
   text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #textBox .image-buttons a:hover {
   color: #cccccc;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
 }
 
 #textBox .image-button img {
