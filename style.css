@@ -1,20 +1,3 @@
-/* Background video styling */
-#videoBackground {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* Make sure the video is in the background */
-  overflow: hidden;
-}
-
-#videoBackground video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 /* Snow effect */
 #snow {
   position: fixed;
