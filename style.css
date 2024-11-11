@@ -127,6 +127,7 @@ body, html {
 }
 
 #textBox .image-buttons {
+  color: white;
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -134,7 +135,6 @@ body, html {
 }
 
 #textBox .image-button img {
-  color: white;
   width: 400px;
   height: 400px;
   border-radius: 5px;
