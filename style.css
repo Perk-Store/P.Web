@@ -84,6 +84,17 @@ body, html {
   z-index: 3;
 }
 
+#uid {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 0.9em;
+  color: white;
+  font-family: Arial, sans-serif;
+  opacity: 0.8;
+}
+
+
 #textBox h1 {
   font-family: 'Arial', sans-serif;
   font-size: 2.5em;
