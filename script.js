@@ -1,6 +1,7 @@
 const enterButton = document.getElementById('enterButton');
 const videoContainer = document.getElementById('videoContainer');
 const video = document.querySelector('#videoContainer video');
+const audio = document.getElementById('audio');
 const textBox = document.getElementById('textBox');
 
 enterButton.addEventListener('click', () => {
@@ -8,18 +9,16 @@ enterButton.addEventListener('click', () => {
 
   setTimeout(() => {
     enterButton.style.display = 'none';
-    
-    // Show the video container and text box after the delay
     videoContainer.style.display = 'block';
-    textBox.style.display = 'block'; // Make sure the text box is set to block before fading in
+    textBox.style.display = 'block';
 
-    // Fade in the video container and text box
     setTimeout(() => {
       videoContainer.style.opacity = '1';
-      textBox.style.opacity = '1'; // Fade in text box
+      textBox.style.opacity = '1';
       video.play();
-    }, 100); // Delay before starting opacity changes for smooth transition
-  }, 500); // Delay before hiding the enter button
+      audio.play();
+    }, 100);
+  }, 500);
 });
 
 document.addEventListener('DOMContentLoaded', function () {
