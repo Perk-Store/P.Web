@@ -2,9 +2,8 @@ const enterButton = document.getElementById('enterButton');
 const videoContainer = document.getElementById('videoContainer');
 const video = document.querySelector('#videoContainer video');
 const audio = document.getElementById('audio');
-const textBox = document.getElementById('textBox'); // Make sure this element exists
+const textBox = document.getElementById('textBox');
 
-// Enter button functionality to show video and textBox
 enterButton.addEventListener('click', () => {
   enterButton.style.opacity = '0';
 
@@ -22,7 +21,6 @@ enterButton.addEventListener('click', () => {
   }, 500);
 });
 
-// Particle.js script for snow effect
 document.addEventListener('DOMContentLoaded', function () {
   const script = document.createElement('script');
   script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
@@ -88,25 +86,21 @@ document.addEventListener('DOMContentLoaded', function () {
   document.head.append(script);
 });
 
-// Add tilt effect to the text box on mousemove
 textBox.addEventListener('mousemove', (e) => {
-  const rect = textBox.getBoundingClientRect(); // Get the position of the box
-  const x = e.clientX - rect.left; // X coordinate relative to the box
-  const y = e.clientY - rect.top;  // Y coordinate relative to the box
+  const rect = textBox.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
   const centerX = rect.width / 2;
   const centerY = rect.height / 2;
 
-  // Calculate the angle based on the cursor position
   const deltaX = x - centerX;
   const deltaY = y - centerY;
-  const angleX = (deltaY / rect.height) * 30;  // Increased tilt range for X
-  const angleY = (deltaX / rect.width) * -30; // Increased tilt range for Y
+  const angleX = (deltaY / rect.height) * 45;
+  const angleY = (deltaX / rect.width) * -45;
 
-  // Apply the tilt effect
   textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY}deg)`;
 });
 
-// Reset the tilt when mouse leaves the text box
 textBox.addEventListener('mouseleave', () => {
   textBox.style.transform = 'translateY(-50%) rotateX(0deg) rotateY(0deg)';
 });
