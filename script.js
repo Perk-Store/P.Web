@@ -4,14 +4,13 @@ const video = document.querySelector('#videoContainer video');
 const audio = document.getElementById('audio');
 const textBox = document.getElementById('textBox');
 
-// Enter button click logic
 enterButton.addEventListener('click', () => {
   enterButton.style.opacity = '0';
 
   setTimeout(() => {
     enterButton.style.display = 'none';
     videoContainer.style.display = 'block';
-    textBox.style.display = 'block'; // Ensure the text box is visible
+    textBox.style.display = 'block';
 
     setTimeout(() => {
       videoContainer.style.opacity = '1';
@@ -22,7 +21,6 @@ enterButton.addEventListener('click', () => {
   }, 500);
 });
 
-// Particles.js initialization for snow effect
 document.addEventListener('DOMContentLoaded', function () {
   const script = document.createElement('script');
   script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
@@ -86,16 +84,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   };
   document.head.append(script);
-});
-
-// Bio box tilt effect
-document.addEventListener('mousemove', (event) => {
-  const x = (event.clientX / window.innerWidth) - 0.5; // Normalize: -0.5 to 0.5
-  const y = (event.clientY / window.innerHeight) - 0.5; // Normalize: -0.5 to 0.5
-
-  const rotationX = y * 10; // Adjust tilt intensity (higher = more dramatic)
-  const rotationY = x * 10;
-
-  // Apply tilt transformation
-  textBox.style.transform = `translate(-50%, -50%) perspective(1000px) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
 });
