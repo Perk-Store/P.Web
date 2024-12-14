@@ -96,14 +96,16 @@ textBox.addEventListener('mousemove', (e) => {
   const deltaX = x - centerX;
   const deltaY = y - centerY;
 
-  const angleX = (deltaY / rect.height) * -30; // Inverted tilt for Y axis
-  const angleY = (deltaX / rect.width) * 30;  // Positive tilt for X axis
+  const angleX = (deltaY / rect.height) * -30; // Invert Y-axis for correct tilt direction
+  const angleY = (deltaX / rect.width) * 30;  // Use positive multiplier for X-axis
 
-  const maxTilt = 30; // Adjust tilt range
+  const maxTilt = 30; // Adjust max tilt range
 
+  // Apply the tilt effect within the specified tilt range
   const tiltX = Math.max(Math.min(angleX, maxTilt), -maxTilt);
   const tiltY = Math.max(Math.min(angleY, maxTilt), -maxTilt);
 
+  // Apply the rotation transform
   textBox.style.transform = `translateY(-50%) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
 });
 
