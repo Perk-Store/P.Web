@@ -2,7 +2,7 @@ const enterButton = document.getElementById('enterButton');
 const videoContainer = document.getElementById('videoContainer');
 const video = document.querySelector('#videoContainer video');
 const audio = document.getElementById('audio');
-const textBox = document.getElementById('textBox');
+const textBox = document.getElementById('textBox'); // Ensure this is only declared once
 
 enterButton.addEventListener('click', () => {
   enterButton.style.opacity = '0';
@@ -86,26 +86,25 @@ document.addEventListener('DOMContentLoaded', function () {
   document.head.append(script);
 });
 
-const textBox = document.querySelector('#textBox');
+// Add tilt effect to the text box
+textBox.addEventListener('mousemove', (e) => {
+  const rect = textBox.getBoundingClientRect(); // Get the position of the box
+  const x = e.clientX - rect.left; // X coordinate relative to the box
+  const y = e.clientY - rect.top;  // Y coordinate relative to the box
+  const centerX = rect.width / 2;
+  const centerY = rect.height / 2;
 
-  textBox.addEventListener('mousemove', (e) => {
-    const rect = textBox.getBoundingClientRect(); // Get the position of the box
-    const x = e.clientX - rect.left; // X coordinate relative to the box
-    const y = e.clientY - rect.top;  // Y coordinate relative to the box
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
+  // Calculate the angle based on the cursor position
+  const deltaX = x - centerX;
+  const deltaY = y - centerY;
+  const angleX = (deltaY / rect.height) * 30;  // Increased tilt range for X
+  const angleY = (deltaX / rect.width) * -30; // Increased tilt range for Y
 
-    // Calculate the angle based on the cursor position
-    const deltaX = x - centerX;
-    const deltaY = y - centerY;
-    const angleX = (deltaY / rect.height) * 30;  // Increased tilt range for X
-    const angleY = (deltaX / rect.width) * -30; // Increased tilt range for Y
+  // Apply the tilt effect
+  textBox.style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+});
 
-    // Apply the tilt effect
-    textBox.style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg)`;
-  });
-
-  textBox.addEventListener('mouseleave', () => {
-    // Reset the transform when the mouse leaves the text box
-    textBox.style.transform = 'rotateX(0deg) rotateY(0deg)';
-  });
+textBox.addEventListener('mouseleave', () => {
+  // Reset the transform when the mouse leaves the text box
+  textBox.style.transform = 'rotateX(0deg) rotateY(0deg)';
+});
