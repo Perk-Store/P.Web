@@ -96,8 +96,11 @@ textBox.addEventListener('mousemove', (e) => {
   const deltaX = x - centerX;
   const deltaY = y - centerY;
 
-  const angleX = (deltaY / rect.height) * -30; // Invert Y-axis for correct tilt direction
-  const angleY = (deltaX / rect.width) * 30;  // Use positive multiplier for X-axis
+  // Invert tilt for the X-axis based on the mouse movement (left to right)
+  const angleY = (deltaX / rect.width) * 30; 
+
+  // Reverse tilt for the Y-axis based on the mouse movement (top to bottom)
+  const angleX = (deltaY / rect.height) * -30;
 
   const maxTilt = 30; // Adjust max tilt range
 
