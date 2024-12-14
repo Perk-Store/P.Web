@@ -11,7 +11,7 @@ enterButton.addEventListener('click', () => {
   setTimeout(() => {
     enterButton.style.display = 'none';
     videoContainer.style.display = 'block';
-    textBox.style.display = 'block';
+    textBox.style.display = 'block'; // Ensure the text box is visible
 
     setTimeout(() => {
       videoContainer.style.opacity = '1';
@@ -90,12 +90,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Bio box tilt effect
 document.addEventListener('mousemove', (event) => {
-  const x = (event.clientX / window.innerWidth) - 0.5; // Range: -0.5 to 0.5
-  const y = (event.clientY / window.innerHeight) - 0.5; // Range: -0.5 to 0.5
+  const x = (event.clientX / window.innerWidth) - 0.5; // Normalize: -0.5 to 0.5
+  const y = (event.clientY / window.innerHeight) - 0.5; // Normalize: -0.5 to 0.5
 
-  const rotationX = y * 10; // Adjust tilt intensity
+  const rotationX = y * 10; // Adjust tilt intensity (higher = more dramatic)
   const rotationY = x * 10;
 
-  textBox.style.transform = `translate(-50%, -50%) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
-  textBox.style.transition = "transform 0.1s ease-out"; // Smooth effect
+  // Apply tilt transformation
+  textBox.style.transform = `translate(-50%, -50%) perspective(1000px) rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
 });
