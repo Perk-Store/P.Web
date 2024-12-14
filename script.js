@@ -96,8 +96,8 @@ textBox.addEventListener('mousemove', (e) => {
   const deltaX = x - centerX;
   const deltaY = y - centerY;
 
-  const angleX = (deltaY / rect.height) * -25; // Adjusted for more pronounced downward tilt
-  const angleY = (deltaX / rect.width) * 25;  // Tilt left and right based on cursor
+  const angleX = (deltaY / rect.height) * 25; // Positive value for downward tilt
+  const angleY = (deltaX / rect.width) * -25;  // Negative value for right tilt
 
   const maxTilt = 25;
 
