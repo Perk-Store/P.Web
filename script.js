@@ -96,19 +96,20 @@ textBox.addEventListener('mousemove', (e) => {
   const deltaX = x - centerX;
   const deltaY = y - centerY;
 
-  const angleX = (deltaY / rect.height) * 50; // Increased tilt for Y-axis (top to bottom)
-  const angleY = (deltaX / rect.width) * -30; // Tilt for X-axis (left to right)
+  // Increase tilt for vertical movement (up/down)
+  const angleX = (deltaY / rect.height) * 50; // More tilt for up/down
+  const angleY = (deltaX / rect.width) * -30; // Normal tilt for left/right
 
   if (y > centerY) { // Bottom half
-    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Down
+    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Down tilt
   } else { // Top half
-    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Up
+    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Up tilt
   }
 
   if (x > centerX) { // Right half
-    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Left for right side
+    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Left tilt for right side
   } else { // Left half
-    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Right for left side
+    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Right tilt for left side
   }
 });
 
