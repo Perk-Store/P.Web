@@ -96,20 +96,15 @@ textBox.addEventListener('mousemove', (e) => {
   const deltaX = x - centerX;
   const deltaY = y - centerY;
 
-  // Invert tilt for the X-axis based on the mouse movement (left to right)
-  const angleY = (deltaX / rect.width) * 30; 
+  const angleX = (deltaY / rect.height) * -30; // Tilt for Y-axis (top to bottom)
+  const angleY = (deltaX / rect.width) * 30;  // Tilt for X-axis (left to right)
 
-  // Reverse tilt for the Y-axis based on the mouse movement (top to bottom)
-  const angleX = (deltaY / rect.height) * -30;
-
-  const maxTilt = 30; // Adjust max tilt range
-
-  // Apply the tilt effect within the specified tilt range
-  const tiltX = Math.max(Math.min(angleX, maxTilt), -maxTilt);
-  const tiltY = Math.max(Math.min(angleY, maxTilt), -maxTilt);
-
-  // Apply the rotation transform
-  textBox.style.transform = `translateY(-50%) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+  // Reversed tilt for the bottom areas
+  if (y > centerY) {
+    textBox.style.transform = `translateY(-50%) rotateX(${angleX * -1}deg) rotateY(${angleY}deg)`;
+  } else {
+    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+  }
 });
 
 textBox.addEventListener('mouseleave', () => {
