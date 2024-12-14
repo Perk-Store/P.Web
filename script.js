@@ -96,21 +96,15 @@ textBox.addEventListener('mousemove', (e) => {
   const deltaX = x - centerX;
   const deltaY = y - centerY;
 
-  const angleX = (deltaY / rect.height) * 30; // Tilt for Y-axis (top to bottom)
-  const angleY = (deltaX / rect.width) * -30; // Tilt for X-axis (left to right)
+  const angleX = (deltaY / rect.height) * -25; // Adjusted for more pronounced downward tilt
+  const angleY = (deltaX / rect.width) * 25;  // Tilt left and right based on cursor
 
-  // Adjusting the tilt behavior based on the mouse position
-  if (y > centerY) { // Bottom half
-    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Down
-  } else { // Top half
-    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Up
-  }
+  const maxTilt = 25;
 
-  if (x > centerX) { // Right half
-    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Left for right side
-  } else { // Left half
-    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Right for left side
-  }
+  const tiltX = Math.max(Math.min(angleX, maxTilt), -maxTilt);
+  const tiltY = Math.max(Math.min(angleY, maxTilt), -maxTilt);
+
+  textBox.style.transform = `translateY(-50%) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
 });
 
 textBox.addEventListener('mouseleave', () => {
