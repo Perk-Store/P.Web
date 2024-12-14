@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Box Tilt</title>
+  <style>
+    #myTextBox {
+      width: 200px;
+      height: 50px;
+      font-size: 18px;
+      text-align: center;
+      line-height: 50px;
+      background-color: lightgray;
+      border: 2px solid #ccc;
+      transition: transform 0.1s ease; /* Smooth transition */
+    }
+  </style>
+</head>
+<body>
+
+<div id="myTextBox">Hover Over Me!</div>
+
+<script>
+  const textBox = document.querySelector('#myTextBox');
+
+  textBox.addEventListener('mousemove', (e) => {
+    const rect = textBox.getBoundingClientRect(); // Get the position of the box
+    const x = e.clientX - rect.left; // X coordinate relative to the box
+    const y = e.clientY - rect.top;  // Y coordinate relative to the box
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    // Calculate the angle based on the cursor position
+    const deltaX = x - centerX;
+    const deltaY = y - centerY;
+    const angleX = (deltaY / rect.height) * 10;  // Tilt range for X
+    const angleY = (deltaX / rect.width) * -10; // Tilt range for Y
+
+    // Apply the tilt effect
+    textBox.style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+  });
+
+  textBox.addEventListener('mouseleave', () => {
+    // Reset the transform when the mouse leaves the text box
+    textBox.style.transform = 'rotateX(0deg) rotateY(0deg)';
+  });
+</script>
+
+</body>
+</html>
