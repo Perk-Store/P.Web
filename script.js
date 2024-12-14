@@ -106,7 +106,7 @@ textBox.addEventListener('mousemove', (e) => {
     textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Up
   }
 
-  if (x > centerX) { // Right half
+  if (x > centerX) { 
     textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Left for right side
   } else { // Left half
     textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Right for left side
