@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Text Box Tilt</title>
   <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+    
     #myTextBox {
       width: 200px;
       height: 50px;
@@ -34,8 +43,8 @@
     // Calculate the angle based on the cursor position
     const deltaX = x - centerX;
     const deltaY = y - centerY;
-    const angleX = (deltaY / rect.height) * 10;  // Tilt range for X
-    const angleY = (deltaX / rect.width) * -10; // Tilt range for Y
+    const angleX = (deltaY / rect.height) * 30;  // Increased tilt range for X
+    const angleY = (deltaX / rect.width) * -30; // Increased tilt range for Y
 
     // Apply the tilt effect
     textBox.style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg)`;
