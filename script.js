@@ -95,22 +95,10 @@ textBox.addEventListener('mousemove', (e) => {
 
   const deltaX = x - centerX;
   const deltaY = y - centerY;
+  const angleX = (deltaY / rect.height) * 45;
+  const angleY = (deltaX / rect.width) * -45;
 
-  const angleX = (deltaY / rect.height) * 30; // Tilt for Y-axis (top to bottom)
-  const angleY = (deltaX / rect.width) * -30; // Tilt for X-axis (left to right)
-
-  // Adjusting the tilt behavior based on the mouse position
-  if (y > centerY) { // Bottom half
-    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Down
-  } else { // Top half
-    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Up
-  }
-
-  if (x > centerX) { 
-    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Left for right side
-  } else { // Left half
-    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Right for left side
-  }
+  textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY}deg)`;
 });
 
 textBox.addEventListener('mouseleave', () => {
