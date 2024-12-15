@@ -2,7 +2,7 @@ const enterButton = document.getElementById('enterButton');
 const videoContainer = document.getElementById('videoContainer');
 const video = document.querySelector('#videoContainer video');
 const audio = document.getElementById('audio');
-const textBox = document.getElementById('textBox'); // Ensure this is only declared once
+const textBox = document.getElementById('textBox');
 
 enterButton.addEventListener('click', () => {
   enterButton.style.opacity = '0';
@@ -86,25 +86,33 @@ document.addEventListener('DOMContentLoaded', function () {
   document.head.append(script);
 });
 
-// Add tilt effect to the text box
 textBox.addEventListener('mousemove', (e) => {
-  const rect = textBox.getBoundingClientRect(); // Get the position of the box
-  const x = e.clientX - rect.left; // X coordinate relative to the box
-  const y = e.clientY - rect.top;  // Y coordinate relative to the box
+  const rect = textBox.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
   const centerX = rect.width / 2;
   const centerY = rect.height / 2;
 
-  // Calculate the angle based on the cursor position
   const deltaX = x - centerX;
   const deltaY = y - centerY;
-  const angleX = (deltaY / rect.height) * 30;  // Increased tilt range for X
-  const angleY = (deltaX / rect.width) * -30; // Increased tilt range for Y
 
-  // Apply the tilt effect
-  textBox.style.transform = `rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+  const angleX = (deltaY / rect.height) * 30; // Tilt for Y-axis (top to bottom)
+  const angleY = (deltaX / rect.width) * -30; // Tilt for X-axis (left to right)
+
+  // Adjusting the tilt behavior based on the mouse position
+  if (y > centerY) { // Bottom half
+    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Down
+  } else { // Top half
+    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Up
+  }
+
+  if (x > centerX) { // Right half
+    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Left for right side
+  } else { // Left half
+    textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY})`; // Right for left side
+  }
 });
 
 textBox.addEventListener('mouseleave', () => {
-  // Reset the transform when the mouse leaves the text box
-  textBox.style.transform = 'rotateX(0deg) rotateY(0deg)';
+  textBox.style.transform = 'translateY(-50%) rotateX(0deg) rotateY(0deg)';
 });
