@@ -80,8 +80,11 @@ body, html {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  transition: opacity 1s ease-in-out, transform 0.1s ease; /* Added transform to transition */
   z-index: 3;
+  transform-style: preserve-3d; /* Ensure the 3D transform is applied */
 }
+
 
 #uid {
   position: absolute;
