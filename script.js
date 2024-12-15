@@ -99,19 +99,24 @@ textBox.addEventListener('mousemove', (e) => {
   const deltaX = x - centerX;
   const deltaY = y - centerY;
 
-  let angleX = (deltaY / rect.height) * -30; // Tilt for Y-axis (inverted for natural tilt)
+  let angleX = (deltaY / rect.height) * -30; // Tilt for Y-axis (adjusted for natural tilt)
   let angleY = (deltaX / rect.width) * 30;  // Tilt for X-axis
 
-  // Adjust tilt for specific corners
+  // Adjust tilt for specific areas
   if (y > centerY) {
-    // Bottom half
-    if (x > centerX) {
-      // Bottom-right corner: tilt left
-      angleY = Math.abs(angleY) * -1;
-    } else {
-      // Bottom-left corner: tilt right
-      angleY = Math.abs(angleY);
-    }
+    // Bottom: tilt more downwards
+    angleX = Math.abs(angleX);
+  } else {
+    // Top: tilt more upwards
+    angleX = -Math.abs(angleX);
+  }
+
+  if (y > centerY && x > centerX) {
+    // Bottom-right corner: tilt left
+    angleY = Math.abs(angleY) * -1;
+  } else if (y > centerY && x < centerX) {
+    // Bottom-left corner: tilt right
+    angleY = Math.abs(angleY);
   }
 
   textBox.style.transform = `translateY(-50%) rotateX(${angleX}deg) rotateY(${angleY}deg)`;
