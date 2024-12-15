@@ -108,7 +108,7 @@ textBox.addEventListener('mousemove', (e) => {
     angleX = Math.abs(angleX);
   } else {
     // Top: tilt more upwards
-    angleX = -Math.abs(angleX);
+    angleX = Math.abs(angleX);
   }
 
   if (y > centerY && x > centerX) {
