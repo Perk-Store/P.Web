@@ -97,10 +97,23 @@ textBox.addEventListener('mousemove', (e) => {
   const deltaY = y - centerY;
 
   const maxTilt = 30;
-  const tiltX = (deltaX / centerX) * maxTilt;
-  const tiltY = (deltaY / centerY) * maxTilt;
 
-  textBox.style.transform = `translateY(-50%) rotateX(${-tiltY}deg) rotateY(${tiltX}deg)`;
+  let tiltX = (deltaX / centerX) * maxTilt;
+  let tiltY = (deltaY / centerY) * maxTilt;
+
+  if (x < centerX) {
+    tiltX = -Math.abs(tiltX);
+  } else {
+    tiltX = Math.abs(tiltX);
+  }
+
+  if (y < centerY) {
+    tiltY = Math.abs(tiltY);
+  } else {
+    tiltY = -Math.abs(tiltY);
+  }
+
+  textBox.style.transform = `translateY(-50%) rotateX(${tiltY}deg) rotateY(${tiltX}deg)`;
 });
 
 textBox.addEventListener('mouseleave', () => {
