@@ -108,9 +108,9 @@ textBox.addEventListener('mousemove', (e) => {
   }
 
   if (y < centerY) {
-    tiltY = Math.abs(tiltY);
-  } else {
     tiltY = -Math.abs(tiltY);
+  } else {
+    tiltY = Math.abs(tiltY);
   }
 
   textBox.style.transform = `translateY(-50%) rotateX(${tiltY}deg) rotateY(${tiltX}deg)`;
