@@ -122,6 +122,7 @@ textBox.addEventListener('mouseleave', () => {
 
 document.addEventListener('keydown', (e) => {
   if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+    e.preventDefault();
     const flashOverlay = document.createElement('div');
     flashOverlay.style.position = 'fixed';
     flashOverlay.style.top = '0';
