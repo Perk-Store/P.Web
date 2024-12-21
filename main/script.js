@@ -113,16 +113,14 @@ textBox.addEventListener('mousemove', (e) => {
     tiltY = Math.abs(tiltY);
   }
 
-  textBox.style.transform = `translateY(-50%) rotateX(${tiltY}deg) rotateY(${tiltX}deg)`;
+  textBox.style.transform = translateY(-50%) rotateX(${tiltY}deg) rotateY(${tiltX}deg);
 });
 
 textBox.addEventListener('mouseleave', () => {
   textBox.style.transform = 'translateY(-50%) rotateX(0deg) rotateY(0deg)';
 });
-
 document.addEventListener('keydown', (e) => {
   if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-    e.preventDefault();
     const flashOverlay = document.createElement('div');
     flashOverlay.style.position = 'fixed';
     flashOverlay.style.top = '0';
