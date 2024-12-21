@@ -119,3 +119,33 @@ textBox.addEventListener('mousemove', (e) => {
 textBox.addEventListener('mouseleave', () => {
   textBox.style.transform = 'translateY(-50%) rotateX(0deg) rotateY(0deg)';
 });
+
+document.addEventListener('keydown', (e) => {
+  if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+    const flashOverlay = document.createElement('div');
+    flashOverlay.style.position = 'fixed';
+    flashOverlay.style.top = '0';
+    flashOverlay.style.left = '0';
+    flashOverlay.style.width = '100%';
+    flashOverlay.style.height = '100%';
+    flashOverlay.style.backgroundColor = 'rgba(255, 0, 0, 0.5)';
+    flashOverlay.style.display = 'flex';
+    flashOverlay.style.justifyContent = 'center';
+    flashOverlay.style.alignItems = 'center';
+    flashOverlay.style.zIndex = '9999';
+
+    const alertText = document.createElement('div');
+    alertText.innerText = 'SKID ALERT';
+    alertText.style.color = 'red';
+    alertText.style.fontSize = '4rem';
+    alertText.style.fontWeight = 'bold';
+    alertText.style.textShadow = '0 0 10px #ff0000';
+
+    flashOverlay.appendChild(alertText);
+    document.body.appendChild(flashOverlay);
+
+    setTimeout(() => {
+      flashOverlay.remove();
+    }, 1000);
+  }
+});
