@@ -147,6 +147,7 @@ document.addEventListener('keydown', (e) => {
     alertText.style.fontSize = '4rem';
     alertText.style.fontWeight = 'bold';
     alertText.style.textShadow = '0 0 10px #ff0000';
+    alertText.style.opacity = '0';
 
     flashOverlay.appendChild(alertText);
     document.body.appendChild(flashOverlay);
@@ -154,9 +155,11 @@ document.addEventListener('keydown', (e) => {
     const flash = () => {
       if (!flashingActive) return;
       flashOverlay.style.backgroundColor = 'rgba(255, 0, 0, 0.5)';
+      alertText.style.opacity = '1';
       setTimeout(() => {
         if (!flashingActive) return;
         flashOverlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+        alertText.style.opacity = '0';
         setTimeout(flash, 500);
       }, 500);
     };
