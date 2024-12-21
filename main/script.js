@@ -120,10 +120,15 @@ textBox.addEventListener('mouseleave', () => {
   textBox.style.transform = 'translateY(-50%) rotateX(0deg) rotateY(0deg)';
 });
 
+let flashingActive = false;
+
 document.addEventListener('keydown', (e) => {
   if (
-    (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C'))
+    (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) &&
+    !flashingActive
   ) {
+    flashingActive = true;
+
     const flashOverlay = document.createElement('div');
     flashOverlay.style.position = 'fixed';
     flashOverlay.style.top = '0';
@@ -146,13 +151,11 @@ document.addEventListener('keydown', (e) => {
     flashOverlay.appendChild(alertText);
     document.body.appendChild(flashOverlay);
 
-    let flashing = true;
-
     const flash = () => {
-      if (!flashing) return;
+      if (!flashingActive) return;
       flashOverlay.style.backgroundColor = 'rgba(255, 0, 0, 0.5)';
       setTimeout(() => {
-        if (!flashing) return;
+        if (!flashingActive) return;
         flashOverlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
         setTimeout(flash, 500);
       }, 500);
@@ -161,7 +164,7 @@ document.addEventListener('keydown', (e) => {
     flash();
 
     window.addEventListener('beforeunload', () => {
-      flashing = false;
+      flashingActive = false;
     });
   }
 });
