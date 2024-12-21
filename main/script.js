@@ -121,18 +121,20 @@ textBox.addEventListener('mouseleave', () => {
 });
 
 document.addEventListener('keydown', (e) => {
-  if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+  if (
+    (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C'))
+  ) {
     const flashOverlay = document.createElement('div');
     flashOverlay.style.position = 'fixed';
     flashOverlay.style.top = '0';
     flashOverlay.style.left = '0';
     flashOverlay.style.width = '100%';
     flashOverlay.style.height = '100%';
-    flashOverlay.style.backgroundColor = 'rgba(255, 0, 0, 0.5)';
     flashOverlay.style.display = 'flex';
     flashOverlay.style.justifyContent = 'center';
     flashOverlay.style.alignItems = 'center';
     flashOverlay.style.zIndex = '9999';
+    flashOverlay.style.pointerEvents = 'none';
 
     const alertText = document.createElement('div');
     alertText.innerText = 'SKID ALERT';
@@ -144,8 +146,22 @@ document.addEventListener('keydown', (e) => {
     flashOverlay.appendChild(alertText);
     document.body.appendChild(flashOverlay);
 
-    setTimeout(() => {
-      flashOverlay.remove();
-    }, 1000);
+    let flashing = true;
+
+    const flash = () => {
+      if (!flashing) return;
+      flashOverlay.style.backgroundColor = 'rgba(255, 0, 0, 0.5)';
+      setTimeout(() => {
+        if (!flashing) return;
+        flashOverlay.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+        setTimeout(flash, 500);
+      }, 500);
+    };
+
+    flash();
+
+    window.addEventListener('beforeunload', () => {
+      flashing = false;
+    });
   }
 });
